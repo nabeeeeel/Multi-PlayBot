@@ -2,6 +2,7 @@ package me.nabeeeeel.bot
 
 import dev.kord.common.annotation.KordPreview
 import dev.kord.common.entity.Snowflake
+import dev.kord.gateway.Intents
 import me.jakejmattson.discordkt.api.dsl.bot
 import me.jakejmattson.discordkt.api.extensions.profileLink
 import me.nabeeeeel.bot.extensions.requiredPermissionLevel
@@ -20,6 +21,8 @@ suspend fun main(args: Array<String>) {
         configure {
             theme = Color(109, 17, 17)
             allowMentionPrefix = true
+            intents = Intents.nonPrivileged.values.toSet()
+
         }
 
         mentionEmbed {
