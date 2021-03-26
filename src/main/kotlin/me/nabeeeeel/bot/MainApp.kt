@@ -52,7 +52,7 @@ suspend fun main(args: Array<String>) {
 
             field {
                 name = "Links"
-                value = "[[See Code]](https://github.com/nabeeeeel/bleu-bot)"
+                value = "[[See Code]](https://github.com/nabeeeeel/Multi-PlayBot/)"
                 inline = true
             }
 
