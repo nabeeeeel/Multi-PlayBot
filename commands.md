@@ -14,4 +14,5 @@
 | PFP, Profile | @username | Did someone make their Profile Picture for ants? Well here ya go! |
 | Right, D, ➡️ |           | Move Up                                                           |
 | Up, W, ⬆️    |           | Move Up                                                           |
+| resize       |           | Resize Window                                                     |
 

@@ -1,17 +1,13 @@
 package me.nabeeeeel.bot.commands
 
 import dev.kord.common.Color
+import dev.kord.common.entity.Snowflake
 import dev.kord.x.emoji.Emojis
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import me.jakejmattson.discordkt.api.arguments.EveryArg
-import me.jakejmattson.discordkt.api.arguments.TimeArg
 import me.jakejmattson.discordkt.api.arguments.UserArg
 import me.jakejmattson.discordkt.api.dsl.commands
 import me.nabeeeeel.bot.data.Configuration
-import java.util.*
-import kotlin.concurrent.schedule
-
+import me.nabeeeeel.bot.game.GameController
+import dev.kord.core.behavior.channel.createMessage
 
 // creates category
 fun MovementCommands(configuration: Configuration) = commands("Utility") {
@@ -23,11 +19,24 @@ fun MovementCommands(configuration: Configuration) = commands("Utility") {
             val user = args.first
             respond {
                 // thumbnail { url = user.avatar.url }
-
                 title = "P R O F I L E  P I C  for ${user.username}"
+                val s = "$user hello"
                 image = user.avatar.url
                 color = Color((0..255).random(), (0..255).random(), (0..255).random())
             }
+        }
+    }
+
+    command("resize") {
+        description = "Resize Window"
+        execute() {
+            val controller : GameController = GameController()
+            controller.resize()
+            val f = controller.getScreenShot()
+            channel.createMessage {
+                addFile(f.toPath())
+            }
+
         }
     }
 

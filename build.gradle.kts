@@ -18,6 +18,7 @@ repositories {
 dependencies {
     testImplementation(kotlin("test-junit"))
     implementation("me.jakejmattson:DiscordKt:0.22.0-SNAPSHOT")
+    implementation("com.discord4j:discord4j-core:3.1.4")
 }
 
 tasks.test {
