@@ -8,9 +8,10 @@ import me.jakejmattson.discordkt.api.dsl.commands
 import me.nabeeeeel.bot.data.Configuration
 import me.nabeeeeel.bot.game.GameController
 import dev.kord.core.behavior.channel.createMessage
+import java.awt.Robot
 
 // creates category
-fun MovementCommands(configuration: Configuration) = commands("Utility") {
+fun MovementCommands(configuration: Configuration, controller: GameController) = commands("Utility") {
 
     command("PFP", "Profile") {
         description = "Did someone make their Profile Picture for ants? Well here ya go!"
@@ -30,17 +31,15 @@ fun MovementCommands(configuration: Configuration) = commands("Utility") {
     command("resize") {
         description = "Resize Window"
         execute() {
-            val controller : GameController = GameController()
             controller.resize()
             val f = controller.getScreenShot()
             channel.createMessage {
                 addFile(f.toPath())
             }
-
         }
     }
 
-    command("Up", "W", "${Emojis.arrowUp}") {
+    command("Up", "${Emojis.arrowUp}") {
         description = "Move Up"
         execute() {
             respond{
@@ -52,7 +51,7 @@ fun MovementCommands(configuration: Configuration) = commands("Utility") {
         }
     }
 
-    command("Down", "S", "${Emojis.arrowDown}") {
+    command("Down", "${Emojis.arrowDown}") {
         description = "Move Up"
         execute() {
             respond{
@@ -64,7 +63,7 @@ fun MovementCommands(configuration: Configuration) = commands("Utility") {
         }
     }
 
-    command("Left", "A", "${Emojis.arrowLeft}") {
+    command("Left", "${Emojis.arrowLeft}") {
         description = "Move Up"
         execute() {
             respond{
@@ -76,7 +75,7 @@ fun MovementCommands(configuration: Configuration) = commands("Utility") {
         }
     }
 
-    command("Right", "D", "${Emojis.arrowRight}") {
+    command("Right", "${Emojis.arrowRight}") {
         description = "Move Up"
         execute() {
             respond{

@@ -8,6 +8,11 @@ build/
 gradle.properties
 # Ignore Gradle project-specific cache directory
 .gradle
-
+.tab
+.at
+.len
+.tab_i
+.keystream
+.last-build.bin
 # Ignore Gradle build output directory
 build
