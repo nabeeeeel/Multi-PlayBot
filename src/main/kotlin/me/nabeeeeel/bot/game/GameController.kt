@@ -20,6 +20,12 @@ import java.awt.Dimension
 
 class GameController {
 
+    private val standardDelay : Int = 5000
+
+    fun delayBot(bot: Robot, time: Int = standardDelay) {
+        bot.delay(time)
+    }
+
     fun getScreenShot() : File {
         val (mouseX, mouseY) = listOf(100, 100)
         val (sX, sY) = listOf(8, 53)
@@ -30,8 +36,8 @@ class GameController {
         bot.mouseMove(mouseX, mouseY)
         bot.mousePress(mask)
         bot.mouseRelease(mask)
-        bot.keyPress(KeyEvent.VK_2)
-        bot.keyRelease(KeyEvent.VK_2)
+
+        delayBot(bot)
 
         val screenSize = Toolkit.getDefaultToolkit().screenSize
         val captureRect = Rectangle(sX, sY, screenSize.width / 4 - xOffset, (screenSize.height / 3 - yOffSet))
@@ -65,7 +71,6 @@ class GameController {
         findScreen(bot, mask)
 
         bot.keyPress(KeyEvent.VK_W)
-        bot.keyRelease(KeyEvent.VK_W)
     }
 
     fun pressDown() {
@@ -99,9 +104,9 @@ class GameController {
         val bot = Robot()
         val mask: Int = InputEvent.BUTTON1_DOWN_MASK
         findScreen(bot, mask)
-
         bot.keyPress(KeyEvent.VK_L)
-        bot.keyRelease(KeyEvent.VK_L)
+        //bot.keyRelease(KeyEvent.VK_L)
+
     }
 
     fun pressB() {

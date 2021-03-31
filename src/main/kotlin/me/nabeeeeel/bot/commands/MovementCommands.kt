@@ -47,16 +47,15 @@ fun MovementCommands(configuration: Configuration) = commands("Utility") {
             controller.resize()
             controller.pressA()
             val f = controller.getScreenShot()
-            channel.createMessage {
-                addFile(f.toPath())
-            }
             respond{
                 title = "CURRENT GAME HERE"
                 // image here
                 color = Color(109, 17, 17)
-                description = "Move Up"
+                description = "Pressed A"
             }
-
+            channel.createMessage {
+                addFile(f.toPath())
+            }
         }
     }
 
