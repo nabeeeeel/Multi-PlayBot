@@ -11,7 +11,7 @@ import dev.kord.core.behavior.channel.createMessage
 import java.awt.Robot
 
 // creates category
-fun MovementCommands(configuration: Configuration, controller: GameController) = commands("Utility") {
+fun MovementCommands(configuration: Configuration) = commands("Utility") {
 
     command("PFP", "Profile") {
         description = "Did someone make their Profile Picture for ants? Well here ya go!"
@@ -31,11 +31,32 @@ fun MovementCommands(configuration: Configuration, controller: GameController) =
     command("resize") {
         description = "Resize Window"
         execute() {
+            val controller = GameController()
             controller.resize()
             val f = controller.getScreenShot()
             channel.createMessage {
                 addFile(f.toPath())
             }
+        }
+    }
+
+    command("A") {
+        description = "Press the 'A' button!"
+        execute() {
+            val controller = GameController()
+            controller.resize()
+            controller.pressA()
+            val f = controller.getScreenShot()
+            channel.createMessage {
+                addFile(f.toPath())
+            }
+            respond{
+                title = "CURRENT GAME HERE"
+                // image here
+                color = Color(109, 17, 17)
+                description = "Move Up"
+            }
+
         }
     }
 

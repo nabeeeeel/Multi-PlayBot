@@ -1,30 +1,22 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-plugins {
-    kotlin("jvm") version "1.4.31"
-}
-
 group = "me.nabeel"
 version = "1.0-SNAPSHOT"
+
+plugins {
+    kotlin("jvm") version "1.4.32"
+}
 
 repositories {
     mavenCentral()
     jcenter()
-    maven{
-        url = uri("https://oss.sonatype.org/content/repositories/snapshots")
-    }
+    maven("https://oss.sonatype.org/content/repositories/snapshots")
 }
 
 dependencies {
-    testImplementation(kotlin("test-junit"))
     implementation("me.jakejmattson:DiscordKt:0.22.0-SNAPSHOT")
-    implementation("com.discord4j:discord4j-core:3.1.4")
 }
 
-tasks.test {
-    useJUnit()
-}
-
-tasks.withType<KotlinCompile>() {
-    kotlinOptions.jvmTarget = "13"
+tasks.compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
 }
