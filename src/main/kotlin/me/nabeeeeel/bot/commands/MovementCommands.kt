@@ -48,7 +48,7 @@ fun MovementCommands(configuration: Configuration) = commands("Utility") {
             controller.pressA()
             val f = controller.getScreenShot()
             respond{
-                title = "CURRENT GAME HERE"
+                title = "Pokemon Emerald"
                 // image here
                 color = Color(109, 17, 17)
                 description = "Pressed A"
@@ -59,50 +59,139 @@ fun MovementCommands(configuration: Configuration) = commands("Utility") {
         }
     }
 
-    command("Up", "${Emojis.arrowUp}") {
-        description = "Move Up"
+    command("B") {
+        description = "Press the 'B' button!"
         execute() {
+            val controller = GameController()
+            controller.resize()
+            controller.pressB()
+            val f = controller.getScreenShot()
             respond{
-                title = "CURRENT GAME HERE"
+                title = "Pokemon Emerald"
                 // image here
                 color = Color(109, 17, 17)
-                description = "Move Up"
+                description = "Pressed B"
+            }
+            channel.createMessage {
+                addFile(f.toPath())
             }
         }
     }
 
+    command("Start") {
+        description = "Press the 'Start' button!"
+        execute() {
+            val controller = GameController()
+            controller.resize()
+            controller.pressStart()
+            val f = controller.getScreenShot()
+            respond{
+                title = "Pokemon Emerald"
+                // image here
+                color = Color(109, 17, 17)
+                description = "Pressed Start"
+            }
+            channel.createMessage {
+                addFile(f.toPath())
+            }
+        }
+    }
+
+    command("Select") {
+        description = "Press the 'Select' button!"
+        execute() {
+            val controller = GameController()
+            controller.resize()
+            controller.pressSelect()
+            val f = controller.getScreenShot()
+            respond{
+                title = "Pokemon Emerald"
+                // image here
+                color = Color(109, 17, 17)
+                description = "Pressed Select"
+            }
+            channel.createMessage {
+                addFile(f.toPath())
+            }
+        }
+    }
+
+    // TODO:
+    command("Up", "${Emojis.arrowUp}") {
+        description = "Move Up"
+        execute() {
+            val controller = GameController()
+            controller.resize()
+            controller.pressUp()
+            val f = controller.getScreenShot()
+            respond{
+                title = "Pokemon Emerald"
+                // image here
+                color = Color(109, 17, 17)
+                description = "Move Up"
+            }
+            channel.createMessage {
+                addFile(f.toPath())
+            }
+        }
+    }
+
+    // TODO:
     command("Down", "${Emojis.arrowDown}") {
         description = "Move Up"
         execute() {
+            val controller = GameController()
+            controller.resize()
+            controller.pressDown()
+            val f = controller.getScreenShot()
             respond{
                 title = "CURRENT GAME HERE"
                 // image here
                 color = Color(109, 17, 17)
                 description = "Move Down"
             }
+            channel.createMessage {
+                addFile(f.toPath())
+            }
         }
     }
 
+    // TODO:
     command("Left", "${Emojis.arrowLeft}") {
         description = "Move Up"
         execute() {
+            val controller = GameController()
+            controller.resize()
+            controller.pressLeft()
+            val f = controller.getScreenShot()
             respond{
                 title = "CURRENT GAME HERE"
                 // image here
                 color = Color(109, 17, 17)
                 description = "Move Left"
             }
+            channel.createMessage {
+                addFile(f.toPath())
+            }
         }
     }
 
+    // TODO:
     command("Right", "${Emojis.arrowRight}") {
         description = "Move Up"
         execute() {
+            val controller = GameController()
+            controller.resize()
+            controller.pressRight()
+            val f = controller.getScreenShot()
             respond{
                 title = "CURRENT GAME HERE"
                 // image here
                 color = Color(109, 17, 17)
                 description = "Move Right"
+            }
+            channel.createMessage {
+                addFile(f.toPath())
             }
         }
     }
