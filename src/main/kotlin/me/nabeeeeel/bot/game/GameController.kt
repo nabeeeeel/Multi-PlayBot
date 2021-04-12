@@ -20,7 +20,7 @@ import java.awt.Dimension
 
 class GameController {
 
-    private val standardDelay : Int = 5000
+    private val standardDelay : Int = 1000
 
     fun delayBot(bot: Robot, time: Int = standardDelay) {
         bot.delay(time)
@@ -28,8 +28,8 @@ class GameController {
 
     fun getScreenShot() : File {
         val (mouseX, mouseY) = listOf(100, 100)
-        val (sX, sY) = listOf(8, 53)
-        val (yOffSet, xOffset) = listOf(45, -2)
+        val (sX, sY) = listOf(19, 72)
+        val (xOffset,yOffSet) = listOf(-2, 45)
 
         val bot = Robot()
         val mask: Int = InputEvent.BUTTON1_DOWN_MASK
@@ -50,7 +50,7 @@ class GameController {
     }
 
     fun findScreen(bot: Robot, mask: Int) {
-        val (mouseX, mouseY) = listOf(50, 20)
+        val (mouseX, mouseY) = listOf(70, 70)
         bot.mouseMove(mouseX, mouseY)
         bot.mousePress(mask)
         bot.mouseRelease(mask)
@@ -60,7 +60,7 @@ class GameController {
 
         val bot = Robot()
         val mask: Int = InputEvent.BUTTON1_DOWN_MASK
-
+        findScreen(bot, mask);
         bot.keyPress(KeyEvent.VK_2)
         bot.keyRelease(KeyEvent.VK_2)
     }
