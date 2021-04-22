@@ -22,7 +22,6 @@ suspend fun main(args: Array<String>) {
             theme = Color(109, 17, 17)
             allowMentionPrefix = true
             intents = Intents.nonPrivileged.values.toSet()
-
         }
 
         mentionEmbed {

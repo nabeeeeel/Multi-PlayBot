@@ -12,95 +12,104 @@ import me.nabeeeeel.bot.services.BooleanServices
 import me.nabeeeeel.bot.services.BooleanServices.Companion.commandInProgress
 import java.awt.Robot
 
-// creates category
-fun MovementCommands(configuration: Configuration) = commands("Movement") {
 
-    // TODO:
-    command("Up", "U","${Emojis.arrowUp}") {
-        description = "Move Up"
+fun ActionCommands(configuration: Configuration) = commands("Actions") {
+
+    command("resize") {
+        description = "Resize Window"
         execute() {
             commandInProgress = true
             val controller = GameController()
             controller.resize()
-            controller.pressUp()
+            val f = controller.getScreenShot()
+            channel.createMessage {
+                addFile(f.toPath())
+            }
+            commandInProgress= false
+        }
+    }
+
+    command("A", "${Emojis.regionalIndicatorA}") {
+        description = "Press the 'A' button!"
+        execute() {
+            commandInProgress = true
+            val controller = GameController()
+            controller.resize()
+            controller.pressA()
             val f = controller.getScreenShot()
             respond{
                 title = "Pokemon Emerald"
                 // image here
                 color = Color(109, 17, 17)
-                description = "Move Up"
+                description = "Pressed A"
             }
             channel.createMessage {
                 addFile(f.toPath())
             }
-            commandInProgress = false
+            commandInProgress= false
         }
     }
 
-    // TODO:
-    command("Down", "D", "${Emojis.arrowDown}") {
-        description = "Move Up"
+    command("B", "${Emojis.regionalIndicatorB}") {
+        description = "Press the 'B' button!"
         execute() {
             commandInProgress = true
             val controller = GameController()
             controller.resize()
-            controller.pressDown()
+            controller.pressB()
             val f = controller.getScreenShot()
             respond{
-                title = "CURRENT GAME HERE"
+                title = "Pokemon Emerald"
                 // image here
                 color = Color(109, 17, 17)
-                description = "Move Down"
+                description = "Pressed B"
             }
             channel.createMessage {
                 addFile(f.toPath())
             }
-            commandInProgress = false
+            commandInProgress= false
         }
     }
 
-    // TODO:
-    command("Left", "L", "${Emojis.arrowLeft}") {
-        description = "Move Up"
+    command("Start") {
+        description = "Press the 'Start' button!"
         execute() {
             commandInProgress = true
             val controller = GameController()
             controller.resize()
-            controller.pressLeft()
+            controller.pressStart()
             val f = controller.getScreenShot()
             respond{
-                title = "CURRENT GAME HERE"
+                title = "Pokemon Emerald"
                 // image here
                 color = Color(109, 17, 17)
-                description = "Move Left"
+                description = "Pressed Start"
             }
             channel.createMessage {
                 addFile(f.toPath())
             }
-            commandInProgress = false
+            commandInProgress= false
         }
     }
 
-    // TODO:
-    command("Right", "R", "${Emojis.arrowRight}") {
-        description = "Move Up"
+    command("Select") {
+        description = "Press the 'Select' button!"
         execute() {
             commandInProgress = true
             val controller = GameController()
             controller.resize()
-            controller.pressRight()
+            controller.pressSelect()
             val f = controller.getScreenShot()
             respond{
-                title = "CURRENT GAME HERE"
+                title = "Pokemon Emerald"
                 // image here
                 color = Color(109, 17, 17)
-                description = "Move Right"
+                description = "Pressed Select"
             }
             channel.createMessage {
                 addFile(f.toPath())
             }
-            commandInProgress = false
+            commandInProgress= false
         }
     }
-
 }

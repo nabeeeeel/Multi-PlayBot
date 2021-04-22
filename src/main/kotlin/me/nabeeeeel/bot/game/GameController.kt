@@ -20,7 +20,7 @@ import java.awt.Dimension
 
 class GameController {
 
-    private val standardDelay : Int = 1000
+    private val standardDelay : Int = 500
 
     fun delayBot(bot: Robot, time: Int = standardDelay) {
         bot.delay(time)
@@ -53,15 +53,15 @@ class GameController {
         val (mouseX, mouseY) = listOf(70, 70)
         bot.mouseMove(mouseX, mouseY)
         bot.mousePress(mask)
-        bot.mouseRelease(mask)
+        //bot.mouseRelease(mask)
     }
 
     fun resize() {
-
         val bot = Robot()
         val mask: Int = InputEvent.BUTTON1_DOWN_MASK
         findScreen(bot, mask);
         bot.keyPress(KeyEvent.VK_2)
+        delayBot(bot, 100)
         bot.keyRelease(KeyEvent.VK_2)
     }
 
@@ -71,8 +71,9 @@ class GameController {
         findScreen(bot, mask)
 
         bot.keyPress(KeyEvent.VK_W)
-        delayBot(bot, 100)
+        delayBot(bot, 5)
         bot.keyRelease(KeyEvent.VK_W)
+
     }
 
     fun pressDown() {
@@ -81,7 +82,7 @@ class GameController {
         findScreen(bot, mask)
 
         bot.keyPress(KeyEvent.VK_S)
-        delayBot(bot, 100)
+        delayBot(bot, 5)
         bot.keyRelease(KeyEvent.VK_S)
     }
 
@@ -91,7 +92,7 @@ class GameController {
         findScreen(bot, mask)
 
         bot.keyPress(KeyEvent.VK_D)
-        delayBot(bot, 100)
+        delayBot(bot, 5)
         bot.keyRelease(KeyEvent.VK_D)
     }
 
@@ -101,7 +102,7 @@ class GameController {
         findScreen(bot, mask)
 
         bot.keyPress(KeyEvent.VK_A)
-        delayBot(bot, 100)
+        delayBot(bot, 5)
         bot.keyRelease(KeyEvent.VK_A)
     }
 
@@ -110,6 +111,7 @@ class GameController {
         val mask: Int = InputEvent.BUTTON1_DOWN_MASK
         findScreen(bot, mask)
         bot.keyPress(KeyEvent.VK_L)
+        //bot.keyRelease(KeyEvent.VK_L)
     }
 
     fun pressB() {
@@ -118,6 +120,7 @@ class GameController {
         findScreen(bot, mask)
 
         bot.keyPress(KeyEvent.VK_K)
+        //bot.keyRelease(KeyEvent.VK_K)
     }
 
     fun pressSelect() {
@@ -126,6 +129,7 @@ class GameController {
         findScreen(bot, mask)
 
         bot.keyPress(KeyEvent.VK_BACK_SPACE)
+        //bot.keyRelease(KeyEvent.VK_BACK_SPACE)
     }
 
     fun pressStart() {
@@ -134,6 +138,8 @@ class GameController {
         findScreen(bot, mask)
 
         bot.keyPress(KeyEvent.VK_ENTER)
+        //bot.keyRelease(KeyEvent.VK_ENTER)
+
     }
 
     fun pressL() {
