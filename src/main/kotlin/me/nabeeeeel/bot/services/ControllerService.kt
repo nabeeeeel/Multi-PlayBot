@@ -1,5 +1,6 @@
-package me.nabeeeeel.bot.game
+package me.nabeeeeel.bot.services
 
+import me.jakejmattson.discordkt.api.annotations.Service
 import java.awt.Rectangle
 import java.awt.Robot
 import java.awt.Toolkit
@@ -8,7 +9,8 @@ import java.awt.event.KeyEvent
 import java.io.File
 import javax.imageio.ImageIO
 
-class GameController {
+@Service
+class ControllerService {
     private val bot = Robot()
     private val standardDelay = 500
 
