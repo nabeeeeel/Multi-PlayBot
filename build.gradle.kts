@@ -1,15 +1,12 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 group = "me.nabeel"
 version = "1.0-SNAPSHOT"
 
 plugins {
-    kotlin("jvm") version "1.4.32"
+    kotlin("jvm") version "1.5.0"
 }
 
 repositories {
     mavenCentral()
-    jcenter()
     maven("https://oss.sonatype.org/content/repositories/snapshots")
 }
 
