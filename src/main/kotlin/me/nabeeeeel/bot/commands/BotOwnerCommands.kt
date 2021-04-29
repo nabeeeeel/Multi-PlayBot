@@ -1,7 +1,6 @@
 package me.nabeeeeel.bot.commands
 
 import dev.kord.common.Color
-import dev.kord.core.entity.Embed
 import me.jakejmattson.discordkt.api.arguments.UserArg
 import me.jakejmattson.discordkt.api.dsl.commands
 import me.nabeeeeel.bot.data.Configuration

@@ -1,21 +1,13 @@
 package me.nabeeeeel.bot.game
 
-import java.awt.event.InputEvent
-
-import java.awt.Robot
-import java.awt.event.KeyEvent
-import javax.imageio.ImageIO
-
-import java.awt.image.BufferedImage
-
 import java.awt.Rectangle
+import java.awt.Robot
 import java.awt.Toolkit
-import java.awt.geom.Rectangle2D
+import java.awt.event.InputEvent
+import java.awt.event.KeyEvent
+import java.awt.image.BufferedImage
 import java.io.File
-import java.awt.Dimension
-
-
-
+import javax.imageio.ImageIO
 
 
 class GameController {

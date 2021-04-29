@@ -1,16 +1,12 @@
 package me.nabeeeeel.bot.commands
 
 import dev.kord.common.Color
-import dev.kord.common.entity.Snowflake
+import dev.kord.core.behavior.channel.createMessage
 import dev.kord.x.emoji.Emojis
-import me.jakejmattson.discordkt.api.arguments.UserArg
 import me.jakejmattson.discordkt.api.dsl.commands
 import me.nabeeeeel.bot.data.Configuration
 import me.nabeeeeel.bot.game.GameController
-import dev.kord.core.behavior.channel.createMessage
-import me.nabeeeeel.bot.services.BooleanServices
 import me.nabeeeeel.bot.services.BooleanServices.Companion.commandInProgress
-import java.awt.Robot
 
 
 fun ActionCommands(configuration: Configuration) = commands("Actions") {
