@@ -1,14 +1,14 @@
 package me.nabeeeeel.bot.commands
 
 import dev.kord.core.behavior.channel.createMessage
-import dev.kord.core.entity.ReactionEmoji
 import dev.kord.x.emoji.DiscordEmoji
 import dev.kord.x.emoji.Emojis
 import me.jakejmattson.discordkt.api.dsl.CommandEvent
-import me.jakejmattson.discordkt.api.dsl.DiscordContext
 import me.jakejmattson.discordkt.api.dsl.commands
 import me.nabeeeeel.bot.services.BooleanServices.Companion.commandInProgress
 import me.nabeeeeel.bot.services.ControllerService
+
+private var hasStarted: Boolean = false
 
 fun buttonCommands(controller: ControllerService) = commands("Button") {
     suspend fun CommandEvent<*>.pressButton(reaction: DiscordEmoji, action: (ControllerService) -> Unit) {
@@ -23,6 +23,59 @@ fun buttonCommands(controller: ControllerService) = commands("Button") {
         }
 
         commandInProgress = false
+    }
+
+    fun pressMenuButton(action: (ControllerService) -> Unit) : String {
+        commandInProgress = true
+
+        controller.resize()
+        action.invoke(controller)
+        val imagePath = controller.getScreenShot().toPath().toUri().toURL().toString()
+        println(imagePath)
+
+        return imagePath.also { commandInProgress = false }
+    }
+
+    command("start") {
+        description = "Start game"
+        execute {
+            if (hasStarted) {
+                respond("The game has already been started")
+                return@execute
+            }
+
+            hasStarted = true
+
+            respondMenu {
+                page {
+                    title = "Pokemon Emerald"
+                }
+
+                reaction(Emojis.regionalIndicatorA) {
+                    image = pressMenuButton { it.pressA() }
+                }
+
+                reaction(Emojis.regionalIndicatorB) {
+                    image = pressMenuButton { it.pressB() }
+                }
+
+                reaction(Emojis.arrowUp) {
+                    image = pressMenuButton { it.pressUp() }
+                }
+
+                reaction(Emojis.arrowDown) {
+                    image = pressMenuButton { it.pressDown() }
+                }
+
+                reaction(Emojis.arrowLeft) {
+                    image = pressMenuButton { it.pressLeft() }
+                }
+
+                reaction(Emojis.arrowRight) {
+                    image = pressMenuButton { it.pressRight() }
+                }
+            }
+        }
     }
 
     command("Up", "U", "${Emojis.arrowUp}") {
