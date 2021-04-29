@@ -30,7 +30,7 @@ fun buttonCommands(controller: ControllerService) = commands("Button") {
 
         controller.resize()
         action.invoke(controller)
-        val imagePath = controller.getScreenShot().toPath().toUri().toURL().toString()
+        val imagePath = "file:///${controller.getScreenShot().absolutePath}"
         println(imagePath)
 
         return imagePath.also { commandInProgress = false }
