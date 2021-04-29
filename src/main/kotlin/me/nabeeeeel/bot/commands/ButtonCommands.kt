@@ -70,14 +70,14 @@ fun buttonCommands(controller: ControllerService) = commands("Button") {
     command("Start") {
         description = "Press the 'Start' button!"
         execute {
-            pressButton(Emojis.whiteCheckMark) { it.pressStart() }
+            pressButton(Emojis.ballotBoxWithCheck) { it.pressStart() }
         }
     }
 
     command("Select") {
         description = "Press the 'Select' button!"
         execute {
-            pressButton(Emojis.whiteCheckMark) { it.pressSelect() }
+            pressButton(Emojis.ballotBoxWithCheck) { it.pressSelect() }
         }
     }
 }
