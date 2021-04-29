@@ -18,7 +18,7 @@ fun MovementCommands(configuration: Configuration) = commands("Movement") {
     // TODO:
     command("Up", "U","${Emojis.arrowUp}") {
         description = "Move Up"
-        execute() {
+        execute {
             commandInProgress = true
             val controller = GameController()
             controller.resize()
@@ -40,7 +40,7 @@ fun MovementCommands(configuration: Configuration) = commands("Movement") {
     // TODO:
     command("Down", "D", "${Emojis.arrowDown}") {
         description = "Move Down"
-        execute() {
+        execute {
             commandInProgress = true
             val controller = GameController()
             controller.resize()
@@ -62,7 +62,7 @@ fun MovementCommands(configuration: Configuration) = commands("Movement") {
     // TODO:
     command("Left", "L", "${Emojis.arrowLeft}") {
         description = "Move Left"
-        execute() {
+        execute {
             commandInProgress = true
             val controller = GameController()
             controller.resize()
@@ -84,7 +84,7 @@ fun MovementCommands(configuration: Configuration) = commands("Movement") {
     // TODO:
     command("Right", "R", "${Emojis.arrowRight}") {
         description = "Move Right"
-        execute() {
+        execute {
             commandInProgress = true
             val controller = GameController()
             controller.resize()

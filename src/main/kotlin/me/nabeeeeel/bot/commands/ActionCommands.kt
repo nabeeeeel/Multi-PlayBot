@@ -17,7 +17,7 @@ fun ActionCommands(configuration: Configuration) = commands("Actions") {
 
     command("resize") {
         description = "Resize Window"
-        execute() {
+        execute {
             commandInProgress = true
             val controller = GameController()
             controller.resize()
@@ -31,7 +31,7 @@ fun ActionCommands(configuration: Configuration) = commands("Actions") {
 
     command("A", "${Emojis.regionalIndicatorA}") {
         description = "Press the 'A' button!"
-        execute() {
+        execute {
             commandInProgress = true
             val controller = GameController()
             controller.resize()
@@ -52,7 +52,7 @@ fun ActionCommands(configuration: Configuration) = commands("Actions") {
 
     command("B", "${Emojis.regionalIndicatorB}") {
         description = "Press the 'B' button!"
-        execute() {
+        execute {
             commandInProgress = true
             val controller = GameController()
             controller.resize()
@@ -73,7 +73,7 @@ fun ActionCommands(configuration: Configuration) = commands("Actions") {
 
     command("Start") {
         description = "Press the 'Start' button!"
-        execute() {
+        execute {
             commandInProgress = true
             val controller = GameController()
             controller.resize()
@@ -94,7 +94,7 @@ fun ActionCommands(configuration: Configuration) = commands("Actions") {
 
     command("Select") {
         description = "Press the 'Select' button!"
-        execute() {
+        execute {
             commandInProgress = true
             val controller = GameController()
             controller.resize()

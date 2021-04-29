@@ -59,7 +59,7 @@ class GameController {
     fun resize() {
         val bot = Robot()
         val mask: Int = InputEvent.BUTTON1_DOWN_MASK
-        findScreen(bot, mask);
+        findScreen(bot, mask)
         bot.keyPress(KeyEvent.VK_2)
         delayBot(bot, 100)
         bot.keyRelease(KeyEvent.VK_2)
