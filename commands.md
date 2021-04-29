@@ -22,9 +22,9 @@
 ## Movement
 | Commands     | Arguments | Description |
 | ------------ | --------- | ----------- |
-| Down, D, ⬇️  |           | Move Up     |
-| Left, L, ⬅️  |           | Move Up     |
-| Right, R, ➡️ |           | Move Up     |
+| Down, D, ⬇️  |           | Move Down   |
+| Left, L, ⬅️  |           | Move Left   |
+| Right, R, ➡️ |           | Move Right  |
 | Up, U, ⬆️    |           | Move Up     |
 
 ## Utility

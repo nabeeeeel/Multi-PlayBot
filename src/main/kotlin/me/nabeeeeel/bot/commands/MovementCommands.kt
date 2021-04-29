@@ -39,7 +39,7 @@ fun MovementCommands(configuration: Configuration) = commands("Movement") {
 
     // TODO:
     command("Down", "D", "${Emojis.arrowDown}") {
-        description = "Move Up"
+        description = "Move Down"
         execute() {
             commandInProgress = true
             val controller = GameController()
@@ -47,7 +47,7 @@ fun MovementCommands(configuration: Configuration) = commands("Movement") {
             controller.pressDown()
             val f = controller.getScreenShot()
             respond{
-                title = "CURRENT GAME HERE"
+                title = "Pokemon Emerald"
                 // image here
                 color = Color(109, 17, 17)
                 description = "Move Down"
@@ -61,7 +61,7 @@ fun MovementCommands(configuration: Configuration) = commands("Movement") {
 
     // TODO:
     command("Left", "L", "${Emojis.arrowLeft}") {
-        description = "Move Up"
+        description = "Move Left"
         execute() {
             commandInProgress = true
             val controller = GameController()
@@ -69,7 +69,7 @@ fun MovementCommands(configuration: Configuration) = commands("Movement") {
             controller.pressLeft()
             val f = controller.getScreenShot()
             respond{
-                title = "CURRENT GAME HERE"
+                title = "Pokemon Emerald"
                 // image here
                 color = Color(109, 17, 17)
                 description = "Move Left"
@@ -83,7 +83,7 @@ fun MovementCommands(configuration: Configuration) = commands("Movement") {
 
     // TODO:
     command("Right", "R", "${Emojis.arrowRight}") {
-        description = "Move Up"
+        description = "Move Right"
         execute() {
             commandInProgress = true
             val controller = GameController()
@@ -91,7 +91,7 @@ fun MovementCommands(configuration: Configuration) = commands("Movement") {
             controller.pressRight()
             val f = controller.getScreenShot()
             respond{
-                title = "CURRENT GAME HERE"
+                title = "Pokemon Emerald"
                 // image here
                 color = Color(109, 17, 17)
                 description = "Move Right"
