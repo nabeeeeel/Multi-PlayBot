@@ -19,6 +19,7 @@ suspend fun main(args: Array<String>) {
         }
 
         configure {
+            commandReaction = null
             allowMentionPrefix = true
             theme = Color(109, 17, 17)
             intents = Intents.nonPrivileged.values

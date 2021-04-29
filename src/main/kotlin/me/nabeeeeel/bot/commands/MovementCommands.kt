@@ -1,6 +1,5 @@
 package me.nabeeeeel.bot.commands
 
-import dev.kord.common.Color
 import dev.kord.core.behavior.channel.createMessage
 import dev.kord.x.emoji.Emojis
 import me.jakejmattson.discordkt.api.dsl.commands
@@ -12,23 +11,20 @@ import me.nabeeeeel.bot.services.BooleanServices.Companion.commandInProgress
 fun MovementCommands(configuration: Configuration) = commands("Movement") {
 
     // TODO:
-    command("Up", "U","${Emojis.arrowUp}") {
+    command("Up", "U", "${Emojis.arrowUp}") {
         description = "Move Up"
         execute {
             commandInProgress = true
             val controller = GameController()
             controller.resize()
             controller.pressUp()
+            reactWith(Emojis.arrowUp)
             val f = controller.getScreenShot()
-            respond{
-                title = "Pokemon Emerald"
-                // image here
-                color = Color(109, 17, 17)
-                description = "Move Up"
-            }
+
             channel.createMessage {
                 addFile(f.toPath())
             }
+
             commandInProgress = false
         }
     }
@@ -41,16 +37,13 @@ fun MovementCommands(configuration: Configuration) = commands("Movement") {
             val controller = GameController()
             controller.resize()
             controller.pressDown()
+            reactWith(Emojis.arrowDown)
             val f = controller.getScreenShot()
-            respond{
-                title = "Pokemon Emerald"
-                // image here
-                color = Color(109, 17, 17)
-                description = "Move Down"
-            }
+
             channel.createMessage {
                 addFile(f.toPath())
             }
+
             commandInProgress = false
         }
     }
@@ -63,16 +56,13 @@ fun MovementCommands(configuration: Configuration) = commands("Movement") {
             val controller = GameController()
             controller.resize()
             controller.pressLeft()
+            reactWith(Emojis.arrowLeft)
             val f = controller.getScreenShot()
-            respond{
-                title = "Pokemon Emerald"
-                // image here
-                color = Color(109, 17, 17)
-                description = "Move Left"
-            }
+
             channel.createMessage {
                 addFile(f.toPath())
             }
+
             commandInProgress = false
         }
     }
@@ -85,16 +75,13 @@ fun MovementCommands(configuration: Configuration) = commands("Movement") {
             val controller = GameController()
             controller.resize()
             controller.pressRight()
+            reactWith(Emojis.arrowRight)
             val f = controller.getScreenShot()
-            respond{
-                title = "Pokemon Emerald"
-                // image here
-                color = Color(109, 17, 17)
-                description = "Move Right"
-            }
+
             channel.createMessage {
                 addFile(f.toPath())
             }
+
             commandInProgress = false
         }
     }

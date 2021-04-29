@@ -21,7 +21,7 @@ fun ActionCommands(configuration: Configuration) = commands("Actions") {
             channel.createMessage {
                 addFile(f.toPath())
             }
-            commandInProgress= false
+            commandInProgress = false
         }
     }
 
@@ -32,17 +32,14 @@ fun ActionCommands(configuration: Configuration) = commands("Actions") {
             val controller = GameController()
             controller.resize()
             controller.pressA()
+            reactWith(Emojis.regionalIndicatorA)
             val f = controller.getScreenShot()
-            respond{
-                title = "Pokemon Emerald"
-                // image here
-                color = Color(109, 17, 17)
-                description = "Pressed A"
-            }
+
             channel.createMessage {
                 addFile(f.toPath())
             }
-            commandInProgress= false
+
+            commandInProgress = false
         }
     }
 
@@ -53,17 +50,14 @@ fun ActionCommands(configuration: Configuration) = commands("Actions") {
             val controller = GameController()
             controller.resize()
             controller.pressB()
+            reactWith(Emojis.regionalIndicatorB)
             val f = controller.getScreenShot()
-            respond{
-                title = "Pokemon Emerald"
-                // image here
-                color = Color(109, 17, 17)
-                description = "Pressed B"
-            }
+
             channel.createMessage {
                 addFile(f.toPath())
             }
-            commandInProgress= false
+
+            commandInProgress = false
         }
     }
 
@@ -75,7 +69,7 @@ fun ActionCommands(configuration: Configuration) = commands("Actions") {
             controller.resize()
             controller.pressStart()
             val f = controller.getScreenShot()
-            respond{
+            respond {
                 title = "Pokemon Emerald"
                 // image here
                 color = Color(109, 17, 17)
@@ -84,7 +78,7 @@ fun ActionCommands(configuration: Configuration) = commands("Actions") {
             channel.createMessage {
                 addFile(f.toPath())
             }
-            commandInProgress= false
+            commandInProgress = false
         }
     }
 
@@ -96,7 +90,7 @@ fun ActionCommands(configuration: Configuration) = commands("Actions") {
             controller.resize()
             controller.pressSelect()
             val f = controller.getScreenShot()
-            respond{
+            respond {
                 title = "Pokemon Emerald"
                 // image here
                 color = Color(109, 17, 17)
@@ -105,7 +99,7 @@ fun ActionCommands(configuration: Configuration) = commands("Actions") {
             channel.createMessage {
                 addFile(f.toPath())
             }
-            commandInProgress= false
+            commandInProgress = false
         }
     }
 }
